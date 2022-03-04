@@ -1,13 +1,13 @@
 #include <GL/glut.h>
 #include <stdlib.h>
 GLfloat T = 0;
-void Spin()
-{
-	T = T + 0.03;
-	if(T>360)
-	T = 0;
-	glutPostRedisplay();
-}
+// void Spin()
+// {
+// 	T = T + 0.03;
+// 	if(T>360)
+// 	T = 0;
+// 	glutPostRedisplay();
+// }
 void MyInit(){
 	glClearColor(0,0,0,1);
 	glColor3f(1,0,0);
@@ -71,8 +71,8 @@ void Draw(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	glLoadIdentity();
-	glRotatef(T,1,1,1);//for spinning
-//	glRotatef(-15,1,1,-1);//for stationary
+// 	glRotatef(T,1,1,1);//for spinning
+	glRotatef(-15,1,1,-1);//for stationary
 	Cube(V[0],V[1],V[2],V[3],V[4],V[5],V[6],V[7]);
 	Cube(V1[0],V1[1],V1[2],V1[3],V1[4],V1[5],V1[6],V1[7]);
 	Cube(V2[0],V2[1],V2[2],V2[3],V2[4],V2[5],V2[6],V2[7]);
@@ -90,7 +90,7 @@ main(int C, char *V[])
 	glutCreateWindow("SOHAN_BEI041");
 	MyInit();
 	glutDisplayFunc(Draw);
-	glutIdleFunc(Spin); //spinning
+// 	glutIdleFunc(Spin); //spinning
 	glutMainLoop();
 	
 	return 0;
